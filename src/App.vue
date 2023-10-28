@@ -1,20 +1,40 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+        
+    <header>
+       <div class="wrapper">
+
+        <div id="toggler-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul id="nav">
+            <li><router-link to="/" class="text-dark nav-link">Home</router-link></li>
+            <li><router-link to="/about" class="text-dark nav-link">About</router-link></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+
+       </div>
+    </header>
+
   <router-view/>
+
+  
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+/* #app { */
+  /* font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-}
+  color: #2c3e50; */
+/* 
+  min-height: 90vh;
+} */
 
+/*
 nav {
   padding: 30px;
 }
@@ -26,5 +46,15 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>
+
+<script>
+  export default{
+    // methods: {
+    //   showNav: function(){
+    //     nav = 
+    //   }
+    // }
+  }
+</script>

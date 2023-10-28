@@ -1,7 +1,10 @@
 .DS_Store
 node_modules
 /dist
-
+packge-lock.json
+package.json
+collaborationDiagram.drawio
+public/css
 
 # local env files
 .env.local

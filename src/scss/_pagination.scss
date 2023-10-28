@@ -1,0 +1,33 @@
+.wrapper.pagination{
+
+    display: flex;
+    justify-content: center;
+
+    ul#pagination-bar{
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            display: inline-block;
+            padding: .7rem;
+            font-size: .7rem;
+            color: $dark_gray;
+            border: 1px solid $dark_gray;
+            margin: .1rem;
+            cursor: pointer;
+            transition: background-color, border-color 3s ease;
+            &:hover, &.active{
+                border: none;
+                background-color: $light_blue;
+                transform: background-color, border-color 4s ease;
+
+            }
+
+            &.disable{
+                // cursor: not-allowed;
+                display: none;
+            }
+
+        }
+    }
+}

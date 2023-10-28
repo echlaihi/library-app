@@ -1,0 +1,23 @@
+$primary_brown: hsl(0, 29%, 48%);
+$dark_brown: darken($color: hsl(0, 29%, 48%), $amount: 5);
+$light_brown: lighten($color: hsl(0, 29%, 48%), $amount: 39);
+$primary_waite: #fff;
+
+// colors alerts
+$dark_red: darken($color: red, $amount: 29);
+$light_red: lighten($color: red, $amount: 20);
+
+$dark_green: darken($color: green, $amount: 12);
+$light_green: lighten($color: green, $amount: 7);
+
+$dark_blue: lighten($color: darkblue, $amount: 7);
+$light_blue: darken($color: lightblue, $amount: 24);
+
+
+
+// k
+$primary_gray: #474747;
+$light_gray: lighten($color: #474747, $amount: 68);
+$dark_gray: darken($color: #474747, $amount: 8);
+
+$height: 80vh;

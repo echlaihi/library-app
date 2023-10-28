@@ -1,0 +1,21 @@
+#result{
+    .alert{
+        display: block;
+        padding: 1rem;
+        
+    
+    }
+    
+    
+    .alert-danger{
+    
+        background-color: $light_red;
+        color: $dark_red;
+    
+    }
+
+    .alert-success{
+        background-color: $light_green;
+        color: $dark_green;
+    }
+}
