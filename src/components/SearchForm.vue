@@ -1,5 +1,6 @@
 <template>
   <section id="search">
+    <!-- <img src="/images/library.jpg"/> -->
         <div class="wrapper">
 
             <form action="" id="search-form">

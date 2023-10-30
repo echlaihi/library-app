@@ -4,11 +4,11 @@ $light_brown: lighten($color: hsl(0, 29%, 48%), $amount: 39);
 $primary_waite: #fff;
 
 // colors alerts
-$dark_red: darken($color: red, $amount: 29);
-$light_red: lighten($color: red, $amount: 20);
+$dark_red: #6b0000;
+$light_red: #f08b8b;
 
-$dark_green: darken($color: green, $amount: 12);
-$light_green: lighten($color: green, $amount: 7);
+$dark_green: #0e560e;
+$light_green: #abeaab;
 
 $dark_blue: lighten($color: darkblue, $amount: 7);
 $light_blue: darken($color: lightblue, $amount: 24);
@@ -19,5 +19,8 @@ $light_blue: darken($color: lightblue, $amount: 24);
 $primary_gray: #474747;
 $light_gray: lighten($color: #474747, $amount: 68);
 $dark_gray: darken($color: #474747, $amount: 8);
+
+$waite: #fff;
+$dark_waite: darken($color: #fff, $amount: 4);
 
 $height: 80vh;

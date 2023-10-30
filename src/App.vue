@@ -3,13 +3,13 @@
     <header>
        <div class="wrapper">
 
-        <div id="toggler-icon">
+        <div @click="toggleActive" id="toggler-icon">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <ul id="nav">
+        <ul id="nav" :class="activeClass">
             <li><router-link to="/" class="text-dark nav-link">Home</router-link></li>
             <li><router-link to="/about" class="text-dark nav-link">About</router-link></li>
             <li><a href="">Contact</a></li>
@@ -51,10 +51,24 @@ nav a.router-link-exact-active {
 
 <script>
   export default{
-    // methods: {
-    //   showNav: function(){
-    //     nav = 
-    //   }
-    // }
+
+    data: function(){
+      return {
+        active: false,
+      }
+    },
+
+    methods: {
+      toggleActive: function(){
+        this.active = !this.active;
+      }
+    },
+
+    computed: { 
+      activeClass: function(){
+        if (this.active) return "active";
+        else return "";
+      }
+    }
   }
 </script>

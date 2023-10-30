@@ -36,7 +36,7 @@ export default {
 
     data: function () {
         return {
-            numberOfPagesWanted: 8,
+            numberOfPagesWanted: 10,
             booksPerPage: null,
             lastOffset: null,
         }

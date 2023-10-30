@@ -6,21 +6,28 @@
         <!-- Books -->
         <section id="results">
           <div class="wrapper">
-            <h2>Results: {{ totalBooks }}</h2>
+            
+            <div class="alert alert-success" v-if="totalBooks">
+                  Results "{{ query }}" : {{ totalBooks }}, page {{ currentPage + 1 }}
+            </div>
 
+                      <div v-if="error" class="alert alert-danger">{{ errorMessage }}</div>
           </div>
+
+          <div class="wrapper" id="books">
+                    <BookCard v-for="(book, index) in books" :key="index" :book="book"/>
+          </div>
+
 
          
 
           <div class="wrapper pagination" v-if="paginationRequired">
-            <!-- paginate :numberPage :currentPage  -->
 
             <Paginator 
 
               :query="query" 
               :totalPages="totalPages" 
               :currentPage="currentPage"
-
               @getPage="getData"
              
              />
@@ -34,7 +41,7 @@
 <script>
 // @ is an alias to /src
 import SearchForm from "@/components/SearchForm.vue"
-// import BookCard from "@/components/BookCard.vue"
+import BookCard from "@/components/BookCard.vue"
 import Paginator from "@/components/Paginator.vue"
 import axios from 'axios'
 
@@ -43,8 +50,8 @@ export default {
   components: {
     // HelloWorld
     SearchForm,
-    Paginator
-    // BookCard,
+    Paginator,
+    BookCard,
   },
 
   data: function(){
@@ -54,7 +61,8 @@ export default {
       currentPage: 0,
       totalBooks: 0,
       totalPages: [],
-      query: ""
+      query: "",
+      error: false
 
     }
   },
@@ -67,16 +75,6 @@ export default {
 
 
   methods: {
-    setData: function(resp){
-      // console.log("sucess: ", resp.docs)
-      // this.books = resp.docs
-
-      // // Update pagination info
-      // this.query = resp.q
-      // this.currentPage = resp.start
-      // this.numFound = resp.numFound
-      // this.totalPages = Math.ceil(this.numFound / this.itemsPerPage)
-    },
 
     getData: function(query, offset){
       console.log("getting offest" , offset );
@@ -88,11 +86,23 @@ export default {
         this.totalBooks  = resp.data.numFound
         this.query       = resp.data.q
         this.totalPages  = Math.ceil(this.totalBooks / this.booksPerPage)
+        this.error = false
+        
+      })
+      .then(function(){
+        
+          var height = window.innerHeight
+          
+          window.scrollTo({
+          
+          top: height,
+          behavior: 'smooth' // Optional, adds a smooth scrolling effect
+          });
 
-        console.log(resp)
       })
       .catch(error => {
-        console.log(error)
+        this.error = true
+        this.errorMessage = error.message
       })
 
     }
